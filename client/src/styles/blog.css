@@ -1,0 +1,46 @@
+.blog-img img{
+    width: 100% !important;
+    height: 100%;
+}
+.blog-img{
+   position: relative; 
+}
+.blog{
+    margin-top: 40px;
+    position: relative !important;
+}
+.blog-title h3{
+    font-family: 'Sacramento', cursive;
+    font-weight: 400;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 40px;
+}
+.blog-title h1{
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.blog-desc h3{
+    margin-top: 15px;
+}
+
+.blog-desc p{
+    margin-top: 15px;
+}
+
+.blog-date  {
+    position: absolute;
+    bottom:0; 
+    background-color:#aa1936 ;
+    display: block !important;
+    width: 110px;
+}
+.blog-date p{
+   margin-top: 8px; 
+   margin-bottom: 8px; 
+   text-align: center;
+   color: #fff;
+}
