@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom'
 import '../styles/menu.css'
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo from '../img/logo.webp'
+//import logo from '../img/logo.webp'
 import {RiKnifeFill } from 'react-icons/ri'
 
 const Menu = () => {

@@ -23,6 +23,7 @@ const Home = () => {
       const data = await getProducts("sold");
      
       if (data.error) {
+        console.log(error);
         setError(data.error);
       } else {
         setProducts(data.products);
