@@ -46,7 +46,7 @@ const SingleBlog = ({match}) => {
         <Row>
             <Col lg={6} md={6} className="offset-md-1">
                 <div className="singleBlog">
-                <img src={`${process.env.REACT_APP_API}uploads/${singleBlog.photo}`} alt='blog' />
+                <img src={`${process.env.REACT_APP_API}/uploads/${singleBlog.photo}`} alt='blog' />
                 <div className="desc">
                     <h1>{singleBlog.title}</h1>
                     <p>{singleBlog.desc}</p>

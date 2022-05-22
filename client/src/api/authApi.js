@@ -1,7 +1,7 @@
 export const Register = async (user) => {
     
     try {
-         const res = await fetch(`${process.env.REACT_APP_API}api/v1/register`, {
+         const res = await fetch(`${process.env.REACT_APP_API}/api/v1/register`, {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -20,7 +20,7 @@ export const Register = async (user) => {
 export const login = async (user) => {
     
   try {
-       const res = await fetch(`${process.env.REACT_APP_API}api/v1/signin`, {
+       const res = await fetch(`${process.env.REACT_APP_API}/api/v1/signin`, {
           method: "POST",
           headers: {
             Accept: "application/json",

@@ -12,7 +12,7 @@ const BlogCard = ({list}) => {
     <>
       <div className="blog" >
          <div className="blog-img">
-             <img src={`${process.env.REACT_APP_API}uploads/${photo}`} alt='blog' />
+             <img src={`${process.env.REACT_APP_API}/uploads/${photo}`} alt='blog' />
         
              <div className="blog-date">
              <p>{moment(createdAt).fromNow('DD/MM/YYYY')}</p> 

@@ -1,10 +1,10 @@
 export const getBlogs = async () => {
     try {
-       const res = await fetch(`${process.env.REACT_APP_API}api/v1/blogs`, {
+       const res = await fetch(`${process.env.REACT_APP_API}/api/v1/blogs`, {
         method:'GET'
        })
-      
-       return res.json()
+      if(res.ok) return res.json()
+       
     } catch (error) {
       console.log(error);
     }
@@ -13,7 +13,7 @@ export const getBlogs = async () => {
 
   export const getBlog = async (blogId) => {
     try {
-       const data = await fetch(`${process.env.REACT_APP_API}api/v1/blog/${blogId}`, {
+       const data = await fetch(`${process.env.REACT_APP_API}/api/v1/blog/${blogId}`, {
          method:'GET'
        })
   

@@ -9,7 +9,7 @@ const ProductCard = ({productsList}) => {
   return (
     <div className='products'>
         <div className="product-image">
-            <img src={`${process.env.REACT_APP_API}uploads/${photo}`} alt="" />
+            <img src={`${process.env.REACT_APP_API}/uploads/${photo}`} alt="" />
         </div>
         <div className="product-items">
             <h3>{name}</h3>
