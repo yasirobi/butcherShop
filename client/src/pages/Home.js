@@ -23,8 +23,7 @@ const Home = () => {
       const data = await getProducts("sold");
      
       if (data.error) {
-        console.log(error);
-        setError(data.error);
+        setError(error);
       } else {
         setProducts(data.products);
       }
@@ -39,13 +38,14 @@ const Home = () => {
       const data = await getBlogs();
        console.log('products', data);
       if (data.error) {
-        setError(data.error);
+        setError(error);
       } else {
         setBlog(data);
       }
+     
     } catch (error) {
       console.log(error);
-    }
+     }
   };
 
 
@@ -53,6 +53,7 @@ const Home = () => {
   useEffect(() => {
     loadBlogs();
     loadProducts()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 

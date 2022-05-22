@@ -5,14 +5,14 @@ import BlogCard from '../components/BlogCard';
 
 
 
-const SingleBlog = ({match}) => {
+const SingleBlog = props => {
   const [singleBlog, setSingleBlog] = useState([])
   const [error, setError] = useState(false);
   const [relatedBlog, setRelatedBlog] = useState([]);
 
 
 
-  const loadBlog = async (blogId) => {
+  const loadBlog = async blogId => {
        try {
           const data = await getBlog(blogId) 
           console.log('blog', data);
@@ -22,7 +22,7 @@ const SingleBlog = ({match}) => {
               setSingleBlog(data)
               const data1 = await getBlogRelated(data._id)
               if (data1.error) {
-                setError(data1.error);
+                setError(error);
             } else {
                 setRelatedBlog(data1);
             }
@@ -35,9 +35,10 @@ const SingleBlog = ({match}) => {
 
 
   useEffect(() => {
-      const blogId = match.params.blogId;
+      const blogId = props.match.params.blogId;
       loadBlog(blogId)
-  }, [match])
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props])
 
   return (
     <>
