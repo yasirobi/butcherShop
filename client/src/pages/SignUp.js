@@ -16,7 +16,7 @@ const SignUp = () => {
     success:false
   });
 
-  const { name, email, password, success, error } = values
+  const { name, email, password, error } = values
 
   const handleChange = name => event => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -27,9 +27,9 @@ const SignUp = () => {
     setValues({ ...values, error: false });
     try {
       const data = await Register({ name, email, password })   
-      if (data.error) toast.error(data.error);
+      if (data.error) toast.error(error);
             if (data.error) {
-                setValues({ ...values, toast:data.error, success: false });
+                setValues({ ...values, toast:error, success: false });
             } else {
               toast.success(data.message);
                 setValues({

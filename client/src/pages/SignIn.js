@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { isAuthenticated, authenticate, login } from '../api/authApi'
+import { login } from '../api/authApi'
 import { ToastContainer, toast } from "react-toastify";
 import { Row, Col, Container } from "react-bootstrap";
 
@@ -10,11 +10,12 @@ const SignIn = () => {
     email: '',
     password:'',
     error:'',
-    redirectRefer: false
+    // redirectRefer: false
+    success:false
   });
 
-const { email, password, redirectRefer } = values;
-const { user } = isAuthenticated()
+const { email, password } = values;
+// const { user } = isAuthenticated()
 
 
 const handleChange = name => event => {
@@ -35,14 +36,14 @@ const clickSubmit = async event =>{
             } else {
               //use a callback function
               toast.success(data.message);
-              authenticate(data, () =>{
-                setValues({
-                  ...values, 
-                    success: true,
-                    loading:false,
-                  redirectRefer:true
-              });
-              })
+              // authenticate(data, () =>{
+              //   setValues({
+              //     ...values, 
+              //       success: true,
+              //       loading:false,
+                 
+              // });
+              // })
             }
     } catch (err) {
       toast.error(err)
