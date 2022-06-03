@@ -54,3 +54,17 @@ export const isAuthenticated = () => {
     return false;
   }
 }
+
+
+export const signout = async (next) => {
+  try {
+    if(typeof window !== 'undefined'){
+      localStorage.removeItem('token')
+      next()
+      const res = await fetch(`${process.env.REACT_APP_API}/api/v1/signout`)
+      return res.json()
+    }
+  } catch (error) {
+     console.log(error);
+  }
+}

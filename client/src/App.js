@@ -11,6 +11,12 @@ import Profile from './pages/Profile';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import SingleBlog from './pages/SingleBlog';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import CreateProduct from './pages/admin/CreateProduct';
+import CreateCategory from './pages/admin/CreateCategory';
+import CreateBlog from './pages/admin/CreateBlog';
+import ViewOrder from './pages/admin/ViewOrder';
+import UpdateCategory from './pages/admin/UpdateCategory';
 
 
 function App() {
@@ -27,6 +33,12 @@ function App() {
      <Route path="/update-products" component={ UpdateProducts } />
      <Route path="/signin" component={ SignIn }/>
      <Route path="/signup" component={ SignUp } />
+     <Route path="/admin/dashboard" component={ AdminDashboard } />
+     <Route path="/admin/create/product" component={ CreateProduct } />
+     <Route path="/admin/create/category" component={ CreateCategory } />
+     <Route path="/admin/create/blog" component={ CreateBlog } />
+     <Route path="/admin/orders" component={ ViewOrder } />
+     <Route path="/admin/update/category/:categoryId" component={ UpdateCategory } />
      </Switch>
     </>
   );

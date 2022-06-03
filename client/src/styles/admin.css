@@ -1,0 +1,40 @@
+.sidenav{
+    background-color: #aa1936;
+    position: fixed;
+    bottom: 0;
+    top: 17%;
+    left: 0;
+    padding: 30px;
+    list-style: none !important;
+}
+.sidenav li{
+    margin-top: 10px;
+}
+
+.sidenav li a{
+    color: #fff !important;
+    text-decoration:  none;
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 10px 35px;
+    
+}
+.sidenav li{
+    transition: all ease-out .5s;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+.sidenav li:hover{
+    transition: all ease-out .5s;
+    padding: 6px;
+    
+    border-radius: 5px;
+}
+.sidenav li a span{
+    color: #fff;
+    text-decoration:  none;
+    font-size: 14px;
+    margin-left: 9px;
+    
+    
+}

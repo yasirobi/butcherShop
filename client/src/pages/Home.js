@@ -25,7 +25,7 @@ const Home = () => {
       if (data.error) {
         setError(error);
       } else {
-        setProducts(data.products);
+        setProducts(data);
       }
     } catch (error) {
       console.log(error);
@@ -82,10 +82,11 @@ const Home = () => {
 
          <Container>
            <div className="products-title">
-             <h1>best meats & fresh</h1>
+             <h3>online store</h3>
+             <h1>popular fresh meats</h1>
            </div>
            <Row>
-             {products.map((productsData, i) => (
+             { products && products.map((productsData, i) => (
                <Col md={4} lg={4} sm={6} xs={12} key={i}>
              <ProductCard productsList={productsData}/>
              </Col>

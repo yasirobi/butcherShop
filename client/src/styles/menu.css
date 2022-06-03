@@ -49,6 +49,10 @@
     margin-top: 4px;
     
   } */
+  .nav-links.is-active{
+    /* border-bottom: 4px solid #aa1936; */
+    color: #aa1936 !important;
+  }
    .navbar-logo{
     display: flex;
     align-items: center;
@@ -86,9 +90,6 @@
     margin-right: 6px;
   }
   
-  .nav-item:hover {
-    border-bottom: 2px solid #f00946;
-  }
   
   .nav-links {
     color: #fff !important;
@@ -104,10 +105,7 @@
     transition: all ease-in-out .4s;
     margin-top: 16px;
   }
-  .nav-links.active{
-      text-decoration: none !important;
-      color: #fff !important;
-  }
+  
   
   .fa-bars {
     color: #fff;
