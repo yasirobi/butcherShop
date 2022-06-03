@@ -5,10 +5,11 @@ const { userById } = require('../controllers/userController');
 const { isAdmin } = require('../middleware/admin');
 const { isAuth } = require('../middleware/auth');
 const { requireSignin } = require('../middleware/protected');
+//const { validCreateProduct, isRequestValidated } = require('../utils/validate');
 
 const router = express.Router()
 
-router.post('/create/:userId',requireSignin, isAuth, isAdmin, uploadMulter, create)
+router.post('/create/:userId',  requireSignin, isAuth, isAdmin, uploadMulter, create)
 router.put('/product/:productId/:userId', uploadMulter ,requireSignin, isAuth, isAdmin, update)
 router.get('/product/:productId', read)
 router.get('/products', lists)

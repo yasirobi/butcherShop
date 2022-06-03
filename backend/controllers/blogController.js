@@ -5,9 +5,10 @@ const fs = require('fs')
 exports.createBlog = async (req,res) => {
     
     const title = req.body.title
+    const rating = req.body.rating
     const { filename } = req.file
     const desc = req.body.desc
-    const data = { title, desc };
+    const data = { title, desc, rating };
     console.log( data )
     try {
         const blog = await new Blog(data)

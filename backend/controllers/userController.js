@@ -46,7 +46,7 @@ exports.signin = async (req,res) => {
            res.json({ 
              success:true,
              token,
-             message:'you are successfully logged in',
+             message:`you are successfully logged in as ${name}`,
              user: { _id, email, name, role } });
           } 
           

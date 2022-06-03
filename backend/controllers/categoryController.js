@@ -24,7 +24,7 @@ exports.create = async (req,res) => {
      const createCta = await new Category({name}) 
      const savedCta = await createCta.save()
      res.status(201).json({
-                   message:'category is created',
+                   message:`category by the name of ${name} is created `,
                    savedCta
                })
   } catch (error) {
@@ -40,7 +40,10 @@ exports.update = async (req,res) => {
      try {
          category.name = req.body.name;
          const data = await category.save()
-         res.status(200).json(data)
+         res.status(200).json({
+            message:`category by the name of ${category.name} is updated `,
+             data
+            })
      } catch (error) {
          console.log(error);
          res.status(500).json({

@@ -1,24 +1,27 @@
 const Product = require('../models/product')
 const fs = require('fs');
-const { errorHandler } = require('../utils/AppError');
-const product = require('../models/product');
+
 
 
 exports.create = async (req,res) => {
-     const {name, description, price, sold,category, quantity } = req.body;
+     const {name, description,shipping, price,rating, sold,category, quantity } = req.body;
     //  console.log(req.file);
-     const { filename } = req.file;
+     const {filename} = req.file;
      try {
-         const product = await new Product({name, description,category, price, sold, quantity})
+ 
+         const product = await new Product({name,shipping, description,category, price,rating, sold, quantity}) 
+          const data = await Product.findOne({name})
+         if(data) return res.status(400).json({error:'already exist'})
          product.photo = filename
-        //  if(product) return res.status(401).json({ error:'product already exist'})
+        
          await product.save()
          res.json({
+             message:`product is by the name of ${name} is created`,
 			product,
 		});
      } catch (err) {
          console.log(err);
-         res.status(500).json({ error: 'internal server error'})
+        
      }
 }
 
@@ -112,9 +115,9 @@ exports.lists = async (req,res) => {
        .sort([[sortBy, order]])
        .limit(limit)
        if(!products) return res.status(400).json({error:'products not found'})
-       res.status(200).json({
+       res.status(200).json(
            products
-       })
+       )
     } catch (error) {
         console.log(error);
          res.status(500).json({ error: 'internal server error'})

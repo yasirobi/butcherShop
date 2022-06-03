@@ -7,19 +7,17 @@ const productSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true,
-        maxLength: 32,
         trim:true,
         unique:true
     },
     description: {
         type: String,
         required:true,
-        maxLength: 2000
+        
       },
 
       price:{
         type:Number,
-        maxLength: 32,
         trim:true,
         required:true
     },
@@ -42,7 +40,11 @@ const productSchema = new mongoose.Schema({
     shipping:{
         required:false,
         type:Boolean
-    }
+    },
+    rating: {
+        type: Number,
+        
+    },
     
 }, { timestamps: true})
 

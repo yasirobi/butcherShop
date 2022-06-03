@@ -26,6 +26,28 @@ exports.validLogin = [
     }).withMessage('Password must contain at least 6 characters').matches(/\d/).withMessage('password must contain a number')
 ]
 
+exports.validCategory = [
+    check('name')
+    .not()
+    .isEmpty()
+    .withMessage('Name is required')
+]
+
+exports.validCreateProduct = [
+    check('name')
+    .not()
+    .isEmpty()
+    .withMessage('Name is required'),
+    check('description')
+    .not()
+    .isEmpty()
+    .withMessage('Description is required'),
+    check('price')
+    .not()
+    .isEmpty()
+    .withMessage('Price is required')
+]
+
 
 exports.isRequestValidated = async = (req,res,next) =>{
     const errors = validationResult(req)
